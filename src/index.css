@@ -79,7 +79,7 @@ button:focus-visible {
   }
 
   body {
-    @apply bg-primary-dark text-text-primary antialiased;
+    @apply bg-transparent text-text-primary;
   }
 
   /* Custom Scrollbar */
@@ -88,16 +88,17 @@ button:focus-visible {
   }
 
   ::-webkit-scrollbar-track {
-    @apply bg-primary-dark;
+    @apply bg-primary-dark/20;
   }
 
   ::-webkit-scrollbar-thumb {
-    @apply bg-text-accent/20 rounded-full hover:bg-text-accent/30 transition-colors duration-200;
+    @apply bg-text-accent/30 rounded-full hover:bg-text-accent/50 transition-colors duration-300;
   }
 
   /* Selection styling */
   ::selection {
     @apply bg-text-accent/30 text-text-primary;
+    background-color: transparent;
   }
 }
 
@@ -128,6 +129,18 @@ button:focus-visible {
   
   .vertical-text {
     writing-mode: vertical-rl;
+  }
+
+  .section-container {
+    @apply relative backdrop-blur-sm bg-primary-dark/10 rounded-lg p-6 transition-all duration-300;
+  }
+  
+  .glass-effect {
+    @apply backdrop-blur-sm bg-primary-dark/20 rounded-lg;
+  }
+  
+  .hover-glass-effect {
+    @apply hover:backdrop-blur-md hover:bg-primary-dark/30 transition-all duration-300;
   }
 }
 

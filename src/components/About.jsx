@@ -64,7 +64,7 @@ const About = () => {
               </p>
             </div>
 
-            <div className="flex flex-wrap gap-4">
+            <div className="flex flex-wrap gap-4 items-center justify-center">
               <motion.a
                 href="/resume.pdf"
                 target="_blank"

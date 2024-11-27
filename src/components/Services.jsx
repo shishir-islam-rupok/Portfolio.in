@@ -49,24 +49,38 @@ const Services = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.2 }}
               className="group relative p-8 rounded-lg bg-primary-dark/50 border border-text-accent/10 
-                       hover:border-text-accent/30 transition-all duration-300"
+                       hover:border-text-accent/30 transition-all duration-300 overflow-hidden cursor-pointer"
             >
-              <div className="absolute inset-0 rounded-lg bg-gradient-to-b from-text-accent/5 to-transparent 
-                          opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              {/* Gradient background */}
+              <div className="absolute inset-0 bg-gradient-to-br from-text-accent/5 via-text-accent/10 to-transparent 
+                          opacity-0 group-hover:opacity-100 transition-all duration-500" />
+              
+              {/* Shine effect */}
+              <div className="absolute -inset-full h-full w-1/2 z-5 block transform -skew-x-12 bg-gradient-to-r from-transparent via-white/10 to-transparent group-hover:animate-shine" />
+              
+              {/* Glow effect */}
+              <div className="absolute inset-0 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500
+                          bg-[radial-gradient(circle_at_50%_50%,rgba(100,255,218,0.1),transparent_60%)]" />
               
               <div className="relative z-10">
                 <div className="w-12 h-12 rounded-full bg-text-accent/10 flex items-center justify-center 
-                            text-text-accent mb-6 group-hover:scale-110 transition-transform duration-300">
+                            text-text-accent mb-6 group-hover:scale-110 group-hover:bg-text-accent/20 
+                            transition-all duration-300 group-hover:shadow-[0_0_20px_rgba(100,255,218,0.3)]">
                   {service.icon}
                 </div>
                 
-                <h3 className="text-xl font-bold text-text-primary mb-4">{service.title}</h3>
-                <p className="text-text-secondary mb-6">{service.description}</p>
+                <h3 className="text-xl font-bold text-text-primary mb-4 group-hover:text-[#64ffda] transition-colors duration-300">
+                  {service.title}
+                </h3>
+                <p className="text-text-secondary mb-6 group-hover:text-white/90 transition-colors duration-300">
+                  {service.description}
+                </p>
                 
                 <ul className="space-y-2">
                   {service.features.map((feature, i) => (
-                    <li key={i} className="flex items-center text-text-secondary">
-                      <span className="w-1.5 h-1.5 rounded-full bg-text-accent mr-2" />
+                    <li key={i} className="flex items-center text-text-secondary group-hover:text-white/80 transition-colors duration-300">
+                      <span className="w-1.5 h-1.5 rounded-full bg-text-accent mr-2 group-hover:bg-[#64ffda] 
+                                   group-hover:shadow-[0_0_5px_#64ffda] transition-all duration-300" />
                       {feature}
                     </li>
                   ))}

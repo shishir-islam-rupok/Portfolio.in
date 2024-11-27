@@ -2,6 +2,9 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { FiGithub, FiTwitter, FiLinkedin, FiArrowRight } from 'react-icons/fi';
 import { TypeAnimation } from 'react-type-animation';
+import { Link } from 'react-scroll';
+import { FaDownload } from 'react-icons/fa';
+import profile from '../assets/ass.js';
 
 const Hero = () => {
   const socialLinks = [
@@ -119,7 +122,7 @@ const Hero = () => {
                             bg-primary-dark/50 backdrop-blur-sm transform transition-all duration-300 
                             hover:border-text-accent/40 hover:scale-[1.02] group">
                 <img
-                  src="/profile.jpg"
+                  src={profile.image}
                   alt="Profile"
                   className="w-full h-full object-cover"
                 />
