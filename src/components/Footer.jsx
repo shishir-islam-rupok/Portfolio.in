@@ -76,6 +76,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
+      <meta name="p:domain_verify" content="68c0f78dea1ee7c5c9a1eea809db6a2e"/>
     </footer>
   );
 };
